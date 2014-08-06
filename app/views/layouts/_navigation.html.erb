@@ -1,0 +1,28 @@
+<div class="fixed contain-to-grid">
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="/">Practicing Rails</a></h1>
+			</li>
+		</ul>
+	
+		<section class="top-bar-section">
+			<ul class="right">
+				<li<%= raw active('postsindex') %>><a href="/posts">Posts</a></li>
+				<li<%= raw active('homecolors') %>><a href="/home/colors">Colors</a></li>
+				<li<%= raw active('homemarkup') %>><a href="/home/markup">Markup</a></li>
+				<li<%= raw active('homefoundation') %>><a href="/home/foundation">Foundation</a></li>
+				<li<%= raw active('homehelp') %>><a href="/help">Help</a></li>
+			</ul>
+		</section>
+	</nav>
+</div>
+
+<div style="margin-top: 7px;" class="row">
+	<ul class="breadcrumbs">
+		<li><a href="/">Site: </a></li>
+		<li><a href="/<%= params[:controller] %>"><%= params[:controller] %></a></li>
+		<li><a href="/<%= params[:controller] %>/<%= params[:action] %>"><%= params[:action] %></a></li>
+	</ul>
+</div>
+

@@ -1,0 +1,27 @@
+= form_for(@post) do |f|
+  -if @post.errors.any?
+    %div{:id => "error_explanation"}
+      %h2{:class => "text-danger"}= pluralize(@post.errors.count, "error") + " prohibited this post from being saved:"
+      %ul
+      -@post.errors.full_messages.each do |message|
+        %li{:class => "alert alert-danger", :style => "padding-left: 10px; list-style: none;"}= message
+
+  %div{:class => "form-group"}
+    =f.label :title
+    =f.text_field(:title, class: "form-control")
+
+  %div{:class => "form-group"}
+    =f.label :body
+    =f.text_area(:body, class: "form-control")
+
+  %div{:class => "form-group"}
+    =f.label :published
+    =f.check_box(:published, class: "checkbox")
+    
+  %div{:class => "form-group"}
+    =f.label :date
+    =f.date_select(:date, class: "form-control")
+    
+  %div{:class => "actions"}
+    =f.submit(class: "button")
+    <input class="button" type="button" name="Cancel" value="Cancel" onclick="document.location='/posts'" />

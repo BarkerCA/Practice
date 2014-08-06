@@ -1,0 +1,19 @@
+table.bp{
+  $table-color: #7a98c6;
+  @include table-scaffolding;
+  @include inner-table-borders(1px, darken($table-color, 40%));
+  @include outer-table-borders(2px);
+  @include alternating-rows-and-columns($table-color, adjust-hue($table-color, -120deg), #222222);
+}
+
+div.bpform form {
+  @include blueprint-form;
+  @include blueprint-scaffolding;
+}
+
+.color-test{
+  min-height: 15px;
+  color: $success-color;
+  background-color: $success-bg-color;
+  border: 1px solid $success-border-color;
+}
