@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get  'help/markup'    => 'home#markup'
   get  'help/foundation'=> 'home#foundation'
   
+  get  'soundcloud'       => 'scloud#index'
+  get  'soundcloud/index' => 'scloud#index'
+  
   # Resource Routing
   resources :posts
 
