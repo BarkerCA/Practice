@@ -1,5 +1,5 @@
 $(document).on('page:change', function() {
-	   $("a[href*='http://']:not([href*='"+location.hostname.replace
+	 $("a[href*='http://']:not([href*='"+location.hostname.replace
            ("www.","")+"'])").each(function() {
        $(this).click(function(event) {
              event.preventDefault();
